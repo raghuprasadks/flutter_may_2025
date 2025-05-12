@@ -12,3 +12,31 @@ angular,react
 Web,Windows,mobile
 4. Getting started with Dart programming
 combination of java and javascript
+
+
+https://kaushalya.tech/
+git
+repositories
+flutter_may_2025
+https://github.com/raghuprasadks/flutter_may_2025
+download and install flutter
+https://docs.flutter.dev/get-started/learn-flutter
+set path using advanced system setting
+Environment variables
+path
+dart --version
+flutter doctor
+create dataprogramming folder
+open in visual studio code
+1-gettingstarted.dart
+dart run 1-gettingstarted.dart
+
+https://dart-tutorial.com/
+
+
+another way of creating dart project
+
+dart create <project name>
+dart create demodart
+cd demodart 
+dart run
