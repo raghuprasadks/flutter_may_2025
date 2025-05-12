@@ -1,0 +1,14 @@
+Agenda:
+1. Introduction to mobile application development
+Web app - (Chatbot),windows app,mobile application
+2. Frameworks for mobile application development
+Android - java,kotlin,android sdk,android studio
+interfacing with backend
+native
+ios - objective c,framework,backend,native
+Hybrid - Deployed on different mobile phone os
+angular,react
+3. Introduction to Flutter - google
+Web,Windows,mobile
+4. Getting started with Dart programming
+combination of java and javascript
