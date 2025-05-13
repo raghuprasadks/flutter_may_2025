@@ -17,3 +17,34 @@ dart test
 4. Inheritance
 5. Interface
 6. Flutter
+
+https://dartpad.dev/
+
+
+Assignment
+
+Product class
+Steps
+1. Create Product class having following attributes
+id,name,supplier,price
+name and supplier is string
+id and price is int
+2. Create a Constructure for Product class
+3. Override toString method to display string representation of Product Class
+
+ProductManagement class
+Steps:
+1. Create ProductManagement class having following attribute
+List<Product> products=[]
+also create default constructor
+2. addProduct(Product product)
+this method should add product to the product list
+3. listProduct()
+this method should display list of product
+4. searchBySupplier(Supplier)
+this method should display products of the supplier
+5. searchByPriceRange(int minprice,int maxprice)
+this method should display products with in the minprice and maxprice limits
+
+
+
