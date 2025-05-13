@@ -1,0 +1,19 @@
+Agenda:
+1. Recap
+Flutter - Hybrid mobile application framework
+Google
+Dart programming language
+Installed flutter
+set the path
+Java,Java Script,C++
+
+dart create <project name>
+cd <project name>
+dart run
+dart test
+
+2. Class N Object
+3. CRUD operation
+4. Inheritance
+5. Interface
+6. Flutter
