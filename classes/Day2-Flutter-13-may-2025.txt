@@ -46,4 +46,22 @@ this method should display products of the supplier
 this method should display products with in the minprice and maxprice limits
 
 
+Assignment
+
+1. Create Account class having following methods
+createaccount(int accountnum,String name)
+deposit(int accountnumber,int amttodeposit)
+withdraw(int accountnumber,int amttowithdraw)
+checkBalance(int accountnumber)
+
+2. Create SBI class which will implement the Account
+class
+3. Create HDFC class which will implement the Account class
+
+
+
+
+
+
+
 
