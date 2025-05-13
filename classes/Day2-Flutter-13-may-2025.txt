@@ -22,7 +22,6 @@ https://dartpad.dev/
 
 
 Assignment
-
 Product class
 Steps
 1. Create Product class having following attributes
