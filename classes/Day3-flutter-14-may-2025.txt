@@ -14,6 +14,7 @@ commands for flutter
 4. flutter doctor
 
 https://dartpad.dev/
+https://app.flutterflow.io/
 
 2. Working with flutter widgets
 a. prime number
@@ -25,3 +26,46 @@ Time in Years :<text box>
 <Calculate>
 
 Simple Interest : 
+
+
+Math Calculator
+
+Enter a number : <text>
+Enter an operator : +
+Enter another number : <text>
+<Calculate>
+10 + 20 = 30
+
+API Integration
+https://jsonplaceholder.typicode.com/
+https://jsonplaceholder.typicode.com/users
+
+flutter create flutterapi
+cd flutterapi
+flutter run
+
+http module
+
+npm install  (package.json)- 
+flutter pub get (pubsec.yaml)
+flutter put get <library name>
+
+in pubsec.yaml
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.0.0
+
+under dependencies add http:^1.0.0
+
+npm install express
+
+pub get express
+
+
+
+
+
+
+
