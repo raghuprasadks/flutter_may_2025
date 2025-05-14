@@ -12,19 +12,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final TextEditingController _controller = TextEditingController();
+  final TextEditingController _principalController = TextEditingController();
+  final TextEditingController _rateController = TextEditingController();
+  final TextEditingController _timeController = TextEditingController();
   String _result = '';
 
-  void _checkEvenOdd() {
-    final input = _controller.text;
-    final number = int.tryParse(input);
+  void _calculateSimpleInterest() {
+    final principal = double.tryParse(_principalController.text);
+    final rate = double.tryParse(_rateController.text);
+    final time = double.tryParse(_timeController.text);
+
     setState(() {
-      if (number == null) {
-        _result = 'Please enter a valid integer';
-      } else if (number % 2 == 0) {
-        _result = '$number is Even';
+      if (principal == null || rate == null || time == null) {
+        _result = 'Please enter valid numbers';
       } else {
-        _result = '$number is Odd';
+        final si = (principal * rate * time) / 100;
+        _result = 'Simple Interest: $si';
       }
     });
   }
@@ -33,7 +36,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('Even or Odd Checker')),
+        appBar: AppBar(title: const Text('Simple Interest Calculator')),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(24.0),
@@ -41,17 +44,35 @@ class _MyAppState extends State<MyApp> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 TextField(
-                  controller: _controller,
+                  controller: _principalController,
                   keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
-                    labelText: 'Enter a number',
+                    labelText: 'Principal',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: _rateController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Rate of Interest',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                TextField(
+                  controller: _timeController,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Time (years)',
                     border: OutlineInputBorder(),
                   ),
                 ),
                 const SizedBox(height: 20),
                 ElevatedButton(
-                  onPressed: _checkEvenOdd,
-                  child: const Text('Check'),
+                  onPressed: _calculateSimpleInterest,
+                  child: const Text('Calculate'),
                 ),
                 const SizedBox(height: 20),
                 Text(

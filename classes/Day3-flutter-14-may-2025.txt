@@ -13,5 +13,15 @@ commands for flutter
 3. flutter run
 4. flutter doctor
 
+https://dartpad.dev/
 
 2. Working with flutter widgets
+a. prime number
+b. Simple Interest
+
+Principal : <text box>
+Rate Of Interest : <text box>
+Time in Years :<text box>
+<Calculate>
+
+Simple Interest : 
