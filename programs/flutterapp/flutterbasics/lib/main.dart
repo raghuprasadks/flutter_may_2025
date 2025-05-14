@@ -12,12 +12,30 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text(
-            'Hello World',
-            style: TextStyle(fontSize: 32),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Hello World',
+                style: TextStyle(
+                  fontSize: 32,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.bold,
+                  backgroundColor: Colors.yellow,
+                ),
+              ),
+              Text(
+                'Welcome to Flutter!',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.green,
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 }
+
