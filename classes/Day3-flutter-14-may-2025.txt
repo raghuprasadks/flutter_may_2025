@@ -46,6 +46,7 @@ flutter run
 
 http module
 
+
 npm install  (package.json)- 
 flutter pub get (pubsec.yaml)
 flutter put get <library name>
@@ -62,6 +63,30 @@ under dependencies add http:^1.0.0
 npm install express
 
 pub get express
+
+
+
+Here are the steps to deploy your Flutter app on an Android mobile phone:
+
+1. Enable Developer Options and USB Debugging on Your Phone
+Go to Settings > About phone.
+Tap Build number 7 times to enable Developer Options.
+Go to Settings > Developer options and enable USB debugging.
+2. Connect Your Phone to Your Computer
+Use a USB cable to connect your Android phone to your computer.
+Allow USB debugging permission on your phone if prompted.
+3. Verify Device Connection
+Open a terminal in your project folder and run:
+
+flutter devices
+
+flutter run
+
+flutter build apk --release
+
+build/app/outputs/flutter-apk/app-release.apk
+
+
 
 
 
