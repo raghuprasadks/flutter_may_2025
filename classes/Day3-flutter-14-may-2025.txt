@@ -1,0 +1,17 @@
+Agenda
+1. Recap
+Dart programming language
+flutter - hybrid mobile application
+windows application
+web application
+mobile application
+visual studio code tool kit is enabled
+
+commands for flutter
+1. flutter create flutterbasics
+2. cd flutterbasics
+3. flutter run
+4. flutter doctor
+
+
+2. Working with flutter widgets
