@@ -12,11 +12,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Color _backgroundColor = Colors.white;
+  final TextEditingController _controller = TextEditingController();
+  String _result = '';
 
-  void _changeColor(Color color) {
+  void _checkEvenOdd() {
+    final input = _controller.text;
+    final number = int.tryParse(input);
     setState(() {
-      _backgroundColor = color;
+      if (number == null) {
+        _result = 'Please enter a valid integer';
+      } else if (number % 2 == 0) {
+        _result = '$number is Even';
+      } else {
+        _result = '$number is Odd';
+      }
     });
   }
 
@@ -24,51 +33,33 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: _backgroundColor,
+        appBar: AppBar(title: const Text('Even or Odd Checker')),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Hello World',
-                style: TextStyle(
-                  fontSize: 32,
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
-                  backgroundColor: Colors.yellow,
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  controller: _controller,
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    labelText: 'Enter a number',
+                    border: OutlineInputBorder(),
+                  ),
                 ),
-              ),
-              Text(
-                'Welcome to Flutter!',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.green,
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: _checkEvenOdd,
+                  child: const Text('Check'),
                 ),
-              ),
-              const SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ElevatedButton(
-                    onPressed: () => _changeColor(Colors.red),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                    child: const Text('Red'),
-                  ),
-                  const SizedBox(width: 16),
-                  ElevatedButton(
-                    onPressed: () => _changeColor(Colors.green),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
-                    child: const Text('Green'),
-                  ),
-                  const SizedBox(width: 16),
-                  ElevatedButton(
-                    onPressed: () => _changeColor(Colors.blue),
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
-                    child: const Text('Blue'),
-                  ),
-                ],
-              ),
-            ],
+                const SizedBox(height: 20),
+                Text(
+                  _result,
+                  style: const TextStyle(fontSize: 24),
+                ),
+              ],
+            ),
           ),
         ),
       ),
