@@ -61,6 +61,13 @@ https://www.mongodb.com/try/download/community
 
 mongodb compass
 
+copy appdb.js into
+api folder
+npm i mongodb
+node appdb.js
+change api in the front end
+/api/user
+test
 
 
 
