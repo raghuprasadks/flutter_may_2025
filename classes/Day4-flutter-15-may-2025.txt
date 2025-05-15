@@ -70,6 +70,26 @@ change api in the front end
 test
 
 
+Assignment:
+
+https://openweathermap.org/
+sign up and create api key
+
+https://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=your apikey
+
+Weather App
+
+Enter City : <text box>
+<Weather>
+
+Minimum Temperature: 
+Maximum Temperature :
+Humidity
+
+
+
+
+
 
 
 
