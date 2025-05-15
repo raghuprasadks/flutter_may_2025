@@ -1,0 +1,35 @@
+Agenda:
+
+1. End to end programming
+full stack application development
+using flutter and node,express,mongodb
+
+Routers
+
+Recap:
+1. External API's
+jsonplaceholder.typicode.com
+
+
+Steps:
+Development of API for user
+node.js,express.js,mongodb
+
+1. Check whether node.js is installed
+in your system
+open command prompt
+node --version
+https://nodejs.org/en/download
+windows installer (msi)
+2. create api folder
+3. create index.js
+4. node index.js
+https://jsonplaceholder.typicode.com/
+
+in api folder
+npm init
+it creates package.json file
+
+
+
+
