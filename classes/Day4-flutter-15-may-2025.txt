@@ -54,6 +54,13 @@ flutter run ./lib/SignUp.dart
 inside api
 npm install cors
 
+https://app.flutterflow.io/
+
+download mongodb community edition
+https://www.mongodb.com/try/download/community
+
+mongodb compass
+
 
 
 
