@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 const port = 5000;
 // middleware
+app.use(cors());
 app.use(express.json());
 var users =[]
 
@@ -10,7 +12,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from the API!' });
+  res.json(users);
 });
 
 app.post('/api', (req, res) => {

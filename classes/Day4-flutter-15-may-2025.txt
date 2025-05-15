@@ -30,6 +30,39 @@ in api folder
 npm init
 it creates package.json file
 
+kaushalya.tech
+git
+repositories
+
+flutter_may_2025
+
+api
+
+Front end
+
+create ui <project>
+flutter create ui
+cd ui 
+open in visual studio code
+flutter run
+
+create SignUp.dart
+in lib folder
+
+flutter run ./lib/SignUp.dart
+
+inside api
+npm install cors
+
+
+
+
+
+
+
+
+
+
 
 
 
