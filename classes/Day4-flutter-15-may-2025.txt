@@ -75,7 +75,7 @@ Assignment:
 https://openweathermap.org/
 sign up and create api key
 
-https://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=your apikey
+https://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=384db1ce93218e20fd384d3016372238
 
 Weather App
 
