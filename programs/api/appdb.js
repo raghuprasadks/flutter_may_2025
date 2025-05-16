@@ -96,13 +96,13 @@ app.get('/api/products/:id', async (req, res) => {
 
 // Create a new product
 app.post('/api/products', async (req, res) => {
-  const { id, name, supplier, price } = req.body;
-  if (!id || !name || !supplier || price === undefined) {
+  const { name, supplier, price } = req.body;
+  if (!name || !supplier || price === undefined) {
     return res.status(400).json({ error: 'All fields are required' });
   }
   try {
-    const result = await productsCollection.insertOne({ id, name, supplier, price });
-    res.status(201).json({ message: 'Product created', product: { id, name, supplier, price } });
+    const result = await productsCollection.insertOne({ name, supplier, price });
+    res.status(201).json({ message: 'Product created', product: { name, supplier, price } });
   } catch (err) {
     res.status(500).json({ error: 'Failed to create product' });
   }

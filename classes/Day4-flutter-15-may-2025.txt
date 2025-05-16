@@ -132,6 +132,34 @@ Low
 Close
 Volume
 
+VideoCart
+
+add following dependencies
+
+provider: ^6.0.0
+url_launcher: ^6.2.6
+
+flutter run ./lib/Videocart.dart
+
+classes 
+VideoShopData - data store extends changenotifier
+
+VideoShopApp - Stateless widget
+VideoListScreen - Stateful widget
+VideoCard - Stateless widget
+CartScreen - StatelessWidget
+CartItemCard - StatelessWidget
+Video
+CartItem
+
+
+Sign Up
+Login
+
+
+
+
+
 
 
 

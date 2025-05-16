@@ -22,6 +22,8 @@ Geo coords [12.9762, 77.6033]
 
 https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey&units=metric
 
+
+
 https://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=384db1ce93218e20fd384d3016372238&units=metric
 
 
@@ -50,5 +52,15 @@ https://pub.dev/
 
 
 
+Mini Project
 
+Steps
+1. create miniproject folder
+2. create api folder inside miniproject
+3. open api folder in visual studio code
+4. in terminal
+npm init
+npm i express mongodb cors
+create app.js
+create api for videos
 

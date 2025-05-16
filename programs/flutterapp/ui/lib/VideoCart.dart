@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(
@@ -12,6 +14,7 @@ void main() {
 }
 
 class VideoShopData extends ChangeNotifier {
+ /** 
   final List<Video> _videos = [
     Video(
       title: 'Flutter UI Masterclass',
@@ -35,8 +38,17 @@ class VideoShopData extends ChangeNotifier {
       youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     ),
   ];
-
+  */
+List<Video> _videos = [];
   List<Video> get videos => _videos;
+  Future<void> fetchVideos() async {
+    final response = await http.get(Uri.parse('http://localhost:5000/api/videos'));
+    if (response.statusCode == 200) {
+      final List data = json.decode(response.body);
+      _videos = data.map((json) => Video.fromJson(json)).toList();
+      notifyListeners();
+    }
+  }
 
   final List<CartItem> _cartItems = [];
 
@@ -99,8 +111,18 @@ class Video {
     required this.imageUrl,
     required this.youtubeUrl,
   });
-}
 
+  factory Video.fromJson(Map<String, dynamic> json) {
+    return Video(
+      //id: json['id'],
+      title: json['title'],
+      description: json['description'],
+      price: (json['price'] as num).toDouble(),
+      imageUrl: json['imageUrl'],
+      youtubeUrl: json['youtubeUrl'],
+    );
+  }
+}
 class CartItem {
   final Video video;
   int quantity;
@@ -119,6 +141,7 @@ class VideoShopApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const VideoListScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
