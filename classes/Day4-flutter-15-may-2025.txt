@@ -118,6 +118,26 @@ Enter Stock Symbol : <text box>
 Price : 
 
 
+https://api.twelvedata.com/time_series?apikey=7d8f7a6612fd406aa71571391a64d9af&interval=1day&symbol=TSLA&outputsize=1
+
+{"meta":{"symbol":"TSLA","interval":"1day","currency":"USD","exchange_timezone":"America/New_York","exchange":"NASDAQ","mic_code":"XNGS","type":"Common Stock"},"values":[{"datetime":"2025-05-15","open":"340.34000","high":"346.14001","low":"334.72000","close":"342.82001","volume":"97631700"}],"status":"ok"}
+
+Enter Stock Symbol :<text box>
+
+Symbol : 
+DateTime:
+Open
+High
+Low
+Close
+Volume
+
+
+
+
+
+
+
 
 
 
