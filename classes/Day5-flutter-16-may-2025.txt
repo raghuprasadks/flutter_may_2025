@@ -1,0 +1,54 @@
+Agenda:
+1. End to end programming
+
+flutter for ui
+Node,express and mongodb for the backend
+
+Openweathermap
+api
+
+Steps:
+1. https://openweathermap.org/
+Sign Up and Login
+2. 
+https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+384db1ce93218e20fd384d3016372238
+
+https://api.openweathermap.org/data/2.5/weather?lat=12.9762&lon=77.6033&appid=384db1ce93218e20fd384d3016372238
+
+
+
+Geo coords [12.9762, 77.6033]
+
+https://api.openweathermap.org/data/2.5/weather?q=$city&appid=$apiKey&units=metric
+
+https://api.openweathermap.org/data/2.5/weather?q=bangalore&appid=384db1ce93218e20fd384d3016372238&units=metric
+
+
+flutter create ui
+cd ui
+open in visual studio code
+flutter run
+it runs
+main.dart
+
+flutter run ./lib/OpenWeatherMap.dart
+
+in pubspec.yaml
+
+add http depency
+http: ^1.0.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.0.0
+
+pub get
+
+https://pub.dev/
+
+
+
+
+

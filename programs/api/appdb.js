@@ -17,6 +17,7 @@ MongoClient.connect(mongoUrl, { useUnifiedTopology: true })
   .then(client => {
     db = client.db(dbName);
     usersCollection = db.collection('users');
+    productsCollection = db.collection('products');
     app.listen(port, () => {
       console.log(`Server is running on port ${port}`);
     });
@@ -65,5 +66,74 @@ app.post('/api/login', async (req, res) => {
     res.json({ message: 'Login successful', user });
   } catch (err) {
     res.status(500).json({ error: 'Login failed' });
+  }
+});
+
+// ...existing user routes...
+
+// Product CRUD APIs
+
+// Get all products
+app.get('/api/products', async (req, res) => {
+  try {
+    const products = await productsCollection.find().toArray();
+    res.json(products);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch products' });
+  }
+});
+
+// Get a product by id
+app.get('/api/products/:id', async (req, res) => {
+  try {
+    const product = await productsCollection.findOne({ id: req.params.id });
+    if (!product) return res.status(404).json({ error: 'Product not found' });
+    res.json(product);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch product' });
+  }
+});
+
+// Create a new product
+app.post('/api/products', async (req, res) => {
+  const { id, name, supplier, price } = req.body;
+  if (!id || !name || !supplier || price === undefined) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
+  try {
+    const result = await productsCollection.insertOne({ id, name, supplier, price });
+    res.status(201).json({ message: 'Product created', product: { id, name, supplier, price } });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to create product' });
+  }
+});
+
+// Update a product by id
+app.put('/api/products/:id', async (req, res) => {
+  const { name, supplier, price } = req.body;
+  try {
+    const result = await productsCollection.updateOne(
+      { id: req.params.id },
+      { $set: { name, supplier, price } }
+    );
+    if (result.matchedCount === 0) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+    res.json({ message: 'Product updated' });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to update product' });
+  }
+});
+
+// Delete a product by id
+app.delete('/api/products/:id', async (req, res) => {
+  try {
+    const result = await productsCollection.deleteOne({ id: req.params.id });
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: 'Product not found' });
+    }
+    res.json({ message: 'Product deleted' });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to delete product' });
   }
 });
