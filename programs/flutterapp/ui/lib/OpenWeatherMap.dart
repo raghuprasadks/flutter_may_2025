@@ -47,9 +47,12 @@ class _WeatherPageState extends State<WeatherPage> {
       final response = await http.get(url);
 
       if (response.statusCode == 200) {
+        print(response.body);
         final decodedData = json.decode(response.body);
+        print("decoded data :: $decodedData");
         setState(() {
           weatherInfo = WeatherInfo.fromJson(decodedData);
+          print("weatherinfo ## $weatherInfo");
         });
       } else {
         print('Failed to load weather data: ${response.statusCode}');

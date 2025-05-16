@@ -84,7 +84,48 @@ Enter City : <text box>
 
 Minimum Temperature: 
 Maximum Temperature :
-Humidity
+Humidity:
+Wind Speed:
+dt:
+
+
+
+api key
+YGbrUnBWhoD70kGFh74W6vVLv6u94CLR
+
+https://financialmodelingprep.com/api/v3/quote/BSE:TCS?apikey=YGbrUnBWhoD70kGFh74W6vVLv6u94CLR
+
+financialmodelingprep.com
+
+https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=BSE:TCS&apikey=YOUR_API_KEY
+
+https://api.twelvedata.com/price?symbol=TCS.BSE&apikey=YOUR_API_KEY
+
+https://api.twelvedata.com/price?symbol=TCS&apikey=7d8f7a6612fd406aa71571391a64d9af
+
+7d8f7a6612fd406aa71571391a64d9af
+Assignment
+
+twelvedata.com
+Sign Up
+Get API key
+
+https://api.twelvedata.com/price?symbol=TCS&apikey=7d8f7a6612fd406aa71571391a64d9af
+
+
+Enter Stock Symbol : <text box>
+
+Price : 
+
+
+
+
+
+
+
+
+
+
 
 
 

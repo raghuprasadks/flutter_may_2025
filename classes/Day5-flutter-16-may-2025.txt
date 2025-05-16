@@ -36,7 +36,7 @@ flutter run ./lib/OpenWeatherMap.dart
 
 in pubspec.yaml
 
-add http depency
+add http dependency
 http: ^1.0.0
 
 dependencies:
