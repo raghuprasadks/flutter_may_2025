@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:ui/widgets/VideoStore.dart';
+
 class VideoForm extends StatefulWidget {
   const VideoForm({super.key});
 
@@ -155,6 +157,13 @@ class _VideoFormState extends State<VideoForm> {
             _message = 'Video saved successfully!';
           });
           _formKey.currentState!.reset();
+          await Future.delayed(const Duration(milliseconds: 500));
+  if (mounted) {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => VideoStoreScreen(onLogout: () {})),
+    );
+  }
         } else {
           setState(() {
             _message = 'Failed to save video: ${response.body}';

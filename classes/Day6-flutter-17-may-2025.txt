@@ -49,7 +49,10 @@ Steps:
 1. inside miniproject folder
 2. open terminal
 3. flutter create ui
-4. copy the code from the git
+4. copy the code from the git to lib folder
+5. add http dependency in pubsec.yaml
+6. flutter run
+
 
 
 
