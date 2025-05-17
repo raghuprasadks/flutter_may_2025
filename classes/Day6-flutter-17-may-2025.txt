@@ -35,6 +35,21 @@ display videos data -- findby
 
 router
 
+npm index.js
+
+
+test api using postman
+
+or talend api tester chrome extension
+nodemon -- 
+
+
+Front end
+Steps:
+1. inside miniproject folder
+2. open terminal
+3. flutter create ui
+4. copy the code from the git
 
 
 
