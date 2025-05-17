@@ -1,6 +1,9 @@
 const express = require('express');
-const app = express();
-const cors = require('cors');
+//const app = express();
+//const cors = require('cors');
+const router = express.Router();
+const { connectDB } = require('../db');
+/** 
 const { MongoClient } = require('mongodb');
 
 let port = process.env.PORT || 5000;
@@ -25,24 +28,39 @@ MongoClient.connect(mongoUrl, { useUnifiedTopology: true })
   .catch(err => {
     console.error('Failed to connect to MongoDB', err);
   });
+*/
 
-app.post('/api/videos', async (req, res) => {
-    const { title, description, url } = req.body;
-    if (!title || !description || !price || !imageurl || !youtubeurl) {
+connectDB()
+  .then(db => {
+    videoCollection = db.collection('videos');
+    console.log(`connected to db`);
+    
+  })
+  .catch(err => {
+    console.error('Failed to connect to MongoDB', err);
+  });
+
+router.post('/', async (req, res) => {
+    console.log('Received request to add video:', req.body);
+    const { title, description, price,imageUrl, youtubeUrl} = req.body;
+    if (!title || !description || !price || !imageUrl || !youtubeUrl) {
         return res.status(400).json({ error: 'Title, description, and URL are required' });
     }
-
+    console.log("after validation");
     try {
-        const video = { title, description, price,imageurl, youtubeurl };
+        const video = { title, description, price,imageUrl, youtubeUrl };
         const result = await videoCollection.insertOne(video);
-        res.status(201).json(result.ops[0]);
+        console.log('Video inserted:', result);
+
+        res.status(201).json(result);
     } catch (error) {
         console.error('Error inserting video:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 })
 
-app.get('/api/videos', async (req, res) => {
+router.get('/', async (req, res) => {
+    console.log('Received request to fetch videos');
     try {
         const videos = await videoCollection.find().toArray();
         res.status(200).json(videos);
@@ -51,6 +69,8 @@ app.get('/api/videos', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
+module.exports = router;
 
 
 

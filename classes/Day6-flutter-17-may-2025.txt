@@ -1,0 +1,42 @@
+Agenda:
+1. Mini Project
+Steps:
+1. create miniproject folder
+2. create api folder inside that
+3. open api folder in vscode
+4. in terminal
+npm init
+keep on pressing enter
+npm i express mongodb cors
+
+create api for users and videos
+users for sign-up and sign-in
+api end points
+http://localhost:5000/api/users 
+- post method for signup
+- name,email,password
+save data to users collection in mongodb
+login
+http://localhost:5000/api/users/login 
+- post method for login
+- email,password
+validate given data
+i,e findby users collection in mongodb
+
+videos - api
+http://localhost:5000/api/videos
+
+- post method for videos
+- name,description,price,imageurl,videourl
+save data to videos collection in mongodb
+
+- get method for videos
+display videos data -- findby
+
+router
+
+
+
+
+
+
